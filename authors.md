@@ -1,6 +1,6 @@
 ---
 layout: authors
-title: Authors
+title: 简介
 description: The authors page for mere blog theme
 ---
 
