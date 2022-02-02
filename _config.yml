@@ -1,11 +1,11 @@
 # Site Settings
-title: Mere Blog Theme
-tagline: Mere Blog Theme
-email: your-email@domain.com
+title: 邬昌先
+tagline: 邬昌先
+email: 
 description: >
-  The demo site for Mere Blog Theme, made for Jekyll and GitHub pages websites
+  最具收藏价值书法家
 baseurl: ""
-url: "https://www.csrhymes.com"
+url: "" #"https://www.csrhymes.com"
 permalink: pretty
 
 paginate: 6
@@ -41,7 +41,7 @@ defaults:
       path: ""
       type: "posts"
     values:
-      author: "C.S. Rhymes"
+      author: "邬昌先"
       layout: post
       image: /img/home.jpg
       show_sidebar: true
