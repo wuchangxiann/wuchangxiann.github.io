@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
-#gemspec
+gemspec
 
 gem "jekyll", "~> 3.9"
-gem "mere-blog-theme"
 
 group :jekyll_plugins do
     gem "jekyll-feed", "~> 0.6"
