@@ -1,7 +1,6 @@
 ---
 layout: authors
-title: 简介
+title: 关于本站
 description: The authors page for mere blog theme
 ---
 
-# 书法家简介
