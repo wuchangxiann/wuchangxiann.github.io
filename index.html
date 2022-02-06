@@ -1,17 +1,25 @@
 ---
-layout: homepage
-title: 邬 昌 先
-subtitle: 群 鸿 戏 海，舞 鹤 游 天
-image: /img/pic.jpg
-hero_image: /img/pic.jpg
-hero_height: is-large
+layout: default
 ---
+{% include hero.html %}
 
+<div class="container">
+	<div class="row">
+		<div class="col col-12">
+			{% if site.posts.size > 0 %}
+				<h4 class="lates-title">Latest Posts</h4>
+			{% endif %}
+		</div>
+	</div>
+</div>
 
-
-<strong>邬昌先</strong>，笔名<strong>雲中鶴</strong>，江西丰城人。<br />
-<br />
-历任中国书画界联合会会员、中国书法艺术研究委员会会员,现为<strong>浙江省义乌市云山书画院主讲</strong>。<br />
-<br />
-受家庭熏陶，自幼酷爱书法，初承家学，临池不缀，稍年长，遍临各家书体，近年来略有寸进，略见机杼。最为擅长楷书，行草。<br />
-<br />
+<div class="container">
+	<div class="row">
+	{% if site.posts.size > 0 %}
+		{% for post in paginator.posts %}
+			{% include article-content.html %}
+		{% endfor %}
+	{% endif %}
+	</div>
+</div>
+{% include pagination.html %}

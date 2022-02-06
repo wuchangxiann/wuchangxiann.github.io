@@ -1,172 +1,170 @@
-# mere-blog-theme
+Zolan - Modern & Minimal Theme for Jekyll
+======
+Zolan is a minimal blog theme for Jekyll.
 
-[![Gem Version](https://badge.fury.io/rb/mere-blog-theme.svg)](https://badge.fury.io/rb/mere-blog-theme) 
-![Gem](https://img.shields.io/gem/dt/mere-blog-theme)
+* * *
 
-Mere is a minimal and simple blog theme, and nothing more, for use with Jekyll and GitHub Pages. It has been built with the Bulma frontend framework.
+Table of Contents
+-----------------
+*   [Features](#features)
+*   [Demo](#demo)
+*   [Deployment](#deployment)
+*   [Posts](#posts)
+*   [Disqus Comments](#DisqusComments)
+*   [Instagram](#instagram)
+*   [Google Analytics](#GoogleAnalytics)
+*   [Update favicon](#UpdateFavicon)
+*   [Credits](#Credits)
+*   [Support](#Support)
 
-It has a homepage which displays the latest 6 posts and a paginated blog page used to list out all blog posts. 
+* * *
 
-**Mere Blog Theme uses Jekyll 3.9 for compatibility with GitHub Pages**
+### Features
+
+* 100% responsive and clean theme
+
+* Optimized for mobile devices
+
+* Minimal design
+
+* Valid HTML5 code
+
+* Post sharing
+
+* Subscription form
+
+* Supports Disqus Comments
+
+* Instagram Feed
+
+* Ionicons Icons
+
+* Google Fonts
 
 
-## Installation
+* * *
 
-Add this line to your Jekyll site's `Gemfile`:
+### Demo
 
-```ruby
-gem "mere-blog-theme"
-```
+Check the theme in action [Demo](https://zolan-jekyll.netlify.app/)
 
-And add this line to your Jekyll site's `_config.yml`:
+![Main page preview](https://github.com/artemsheludko/zolan/blob/master/images/zolan-main-page.png?raw=true)
 
-```yaml
-theme: mere-blog-theme
-```
+The post page would look like this:
 
-And then execute:
+![Post page preview](https://github.com/artemsheludko/zolan/blob/master/images/zolan-post.png?raw=true)
 
-    $ bundle
+* * *
 
-Or install it yourself as:
+### Deployment
 
-    $ gem install mere-blog-theme
+To run the theme locally, navigate to the theme directory and run `bundle install` to install the dependencies, then run `jekyll serve` or `bundle exec jekyll serve` to start the Jekyll server.
 
-## Usage
+I would recommend checking the [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
 
-* [Blog Setup](#blog-setup)
-* [Posts](#posts)
-    * [Post Intro](#post-intro)
-* [Homepage](#homepage)
-* [Authors](#authors)
-* [Google Analytics](#google-analytics)
-
-### Blog Setup
-
-As of 0.4, the blog posts will be displayed on the homepage including pagination, instead of in a separate blog page. 
-
-**The homepage page needs to be called index.html for the blog pagination**
-
-Set the paginator up in the `_config.yml` file with the posts per page and the path to the blog.
-
-```yaml
-paginate: 6
-paginate_path: "/page:num"
-```
+* * *
 
 ### Posts
 
-Posts should be created in the _posts directory as per standard Jekyll usage. The front matter should contain the layout of post, the image to use in the header and the homepage / blog page, the title of the post and the author of the post. You can also set a subtitle for the post if you want to.
+To create a new post, you can create a new markdown file inside the \_posts directory by following the [recommended file structure](https://jekyllrb.com/docs/posts/#creating-post-files).
 
-```yaml
-layout: post
-title: First Post
-image: /img/home.jpg
-author: C.S. Rhymes
-```
+      ---
+      layout: post
+      title: Time to give gifts to everyone
+      date: 2018-08-23 16:04:00 +0300
+      image: 03.jpg
+      tags: Life
+      ---
 
-Wide images will work best, with a minimum width of 1400px. 
 
-#### Post Intro
+You can set the tags and the post image.
 
-Version 0.3 allows you to provide a intro and an intro image in your frontmatter. When creating your post add a short `intro` text an `intro_image` as a path to an image and then specify the `intro_image_ratio` which should be a [Bulma image](https://bulma.io/documentation/elements/image/) class. 
+Add post images to **/images/** directory.
 
-```yaml
-layout: post
-title: Post with Intro
-author: Guest Author
-intro: This is the introduction text for this post. It appears large and bold at the top of the post
-intro_image: /img/home.jpg
-intro_image_ratio: is-16by9
-```
+For tags, try to not add space between two words, for example, `Ruby on Rails`, could be something like (`ruby-on-rails`, `Ruby_on_Rails`, or `Ruby-on-Rails`).
 
-Only the intro is required if you want to display it. If you don't want an image then don't specify one and just the intro text will display.
+* * *
 
-### Homepage
+### Disqus Comments
 
-Finally, configure the homepage by creating an `index.html` page and configure the frontmatter with the layout of homepage, the title, subtitle (optional) and the image. You can set the hero_height to is-large if you want to make the homepage header a bit larger. 
+Zolan Theme comes with Disqus comments enabled.
 
-```yaml
-layout: homepage
-title: Mere Blog Theme
-subtitle: This is the demo site for the Mere Blog Theme
-image: /img/home.jpg
-hero_height: is-large
-```
+Open `_data/settings.yml` file, and change the `mr-brown` value on line 26 with your [Disqus account shortname](https://help.disqus.com/customer/portal/articles/466208).
 
-### Authors
+      Comment Section (Disqus)
+      disqus-identifier: mr-brown # Add your shortname for Disqus Comment. For example mr-brown
 
-To enable the authors section, create a directory named `_authors` and create a page for each author within it. The author pages should have front matter in the following format. 
 
-**NOTE** The author name should match the author name in their posts exactly. 
+That’s all you need to setup Disqus from the theme side. If you get any issue regarding that comments are unable to load. First, make sure you have [registered your website with Disqus (Step 1)](https://help.disqus.com/customer/portal/articles/466182-publisher-quick-start-guide).
 
-```yaml
-layout: author
-title: The authors page title
-name: Author Name
-position: Web Designer
-description: The short description of the author
-avatar: /img/avatar.png
-website: https://www.csrhymes.com
-```
+And also check [Disqus troubleshooting guide](https://help.disqus.com/customer/portal/articles/472007-i-m-receiving-the-message-%22we-were-unable-to-load-disqus-%22) if you still have issues.
 
-The website and avatar are optional, but if you are stuck for author images, why not try [https://getavataaars.com](https://getavataaars.com). Square images work best. You can then write about the author in the page content. 
- 
-Next, create an `authors.md` page in the root of your site and set the layout to authors.
+* * *
 
-```yaml
-layout: authors
-title: Authors
-description: The authors page
-```
+### Instagram
 
-Add authors as a collection in your _config.yml file with output set to true so the pages are generated. 
+The Instagram feed is working using [Instafeed.js](http://instafeedjs.com/) to show the photos.
 
-```yaml
-collections:
-  authors:
-    output: true
-```
+First, you will need to get your account `userId` and `accessToken` from the following URLs:
 
-When you build your site, the authors link will appear in the navbar. The authors page will display the authors you have added. You can then click on their name or image to view the author page, along with a list of their 4 latest posts. 
+*   userId: [http://codeofaninja.com/tools/find-instagram-user-id/](http://codeofaninja.com/tools/find-instagram-user-id/)
+*   accessToken: [instagram.pixelunion.net](http://instagram.pixelunion.net/)
 
-There will also be a link back to the authors page at the bottom of the post. 
+Second, open the `js/common.js` file and replace the `userId` and `accessToken` values.
 
-#### Author Social Profiles
+    var instagramFeed = new Instafeed({
+          get: 'user',
+          limit: 6,
+          resolution: 'standard_resolution',
+          userId: '8987997106',
+          accessToken: '8987997106.924f677.8555ecbd52584f41b9b22ec1a16dafb9',
+          template: ''
+    });
 
-**New in 0.2.1 **
 
-You can add links to an author's social profile pages by adding the profile name and link to the front matter in the author's page (such as _authors/chris.md). The below social profiles are available.
+Third, open the `_data/settings.yml` file and replace the `instafeed: false` on `instafeed: true` value.
 
-```yaml
-facebook: https://www.facebook.com/
-twitter: https://www.twitter.com/
-github: https://www.github.com/
-gitlab: https://www.gitlab.com
-instagram: https://www.instagram.com
-linkedin: https://www.linkedin.com/
-medium: https://www.medium.com/
-stack_overflow: https://stackoverflow.com/
-```
+    # Instagram Feed
+    instafeed: false # To enable the instafeed, use the value true. To turn off use the value false.
+
+
+* * *
 
 ### Google Analytics
 
-To enable Google Analytics add `google_analytics: UA-xxxxxxxx` to your `_config.yml` replacing the UA-xxxxxxxx with your Google Analytics property.
+To integrate Google Analytics, open `_data/settings.yml`, and add your Google Analytics identifier.
 
-## Contributing
+    # Google Analytics
+    google-analytics: # Add your identifier. For example UA-99631805-1
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/chrisrhymes/mere-blog-theme. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-## Development
+* * *
 
-To set up your environment to develop this theme, run `bundle install`.
+### Update favicon
 
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+You can find the current favicon (favicon.ico) inside the theme root directory, just replace it with your new favicon.
 
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `mere-blog-theme.gemspec` accordingly.
+* * *
 
-## License
+### Credits
 
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+I have used the following scripts, fonts or other files as listed.
 
+*   [Google Fonts](https://fonts.google.com/specimen/Nunito) (Roboto, Sans Serif).
+*   [Ionicons Icons](https://ionicons.com/)
+*   [FitVids.js](http://fitvidsjs.com/)
+*   [Medium’s Image Zoom](https://github.com/fat/zoom.js)
+*   [Instafeed.js](http://instafeedjs.com/)
+*   [jQuery.com](https://jquery.com/)
+*   Preview Images form [unsplash.com](https://unsplash.com/), [pexels.com](https://www.pexels.com/)
+
+* * *
+### License
+
+Mit License
+
+* * *
+
+### Support
+<p>If you like the themes that I create you can become my sponsor on <a href="https://www.patreon.com/artemsheludko" target="_blank">Patreon</a>.
+<p align="center"><b>Thank you for your support ❤️</b></p>

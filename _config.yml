@@ -1,57 +1,35 @@
-# Site Settings
-title: 邬昌先
-tagline: 最具收藏价值书法家
-email: 
-description: >
-  最具收藏价值书法家
-baseurl: ""
-url: "" #"https://www.csrhymes.com"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+# Build settings
+markdown: kramdown
 permalink: pretty
-
-paginate: 6
-paginate_path: "/page:num"
-
 plugins:
-  - jekyll-sitemap
   - jekyll-paginate
-  - jekyll-feed
-  - jekyll-seo-tag
-  - kramdown
-  - rouge
+  - jekyll-sitemap
+  - jekyll/tagging
 
-exclude:
-  - Gemfile
-  - clean-theme.gemspec
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+paginate: 5
+paginate_path: "/page/:num"
 
-livereload: true
+
+# Pages Path
+defaults:
+  - scope:
+      path: '_pages'
+    values:
+      permalink: /:basename:output_ext
+
+include:
+  - _pages
+
+
+# Tags
+tag_page_dir:         tag
+tag_page_layout:      tag_page
+tag_permalink_style:  pretty
 
 sass:
+  sass_dir: _sass
   style: compressed
-  source_dir: _sass
-
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      author: "邬昌先"
-      layout: post
-      image: /img/home.jpg
-      show_sidebar: true
-  -
-    scope:
-      path: ""
-      type: "authors"
-    values:
-      layout: "author"
-
-collections:
-  authors:
-    output: true
